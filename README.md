@@ -1,0 +1,1 @@
+# Azure function with cosmos using identity
