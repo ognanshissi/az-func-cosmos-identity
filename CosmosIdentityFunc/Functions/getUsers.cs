@@ -1,18 +1,28 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Core.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Azure.WebJobs.Host;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
-namespace CosmosIdentityFunc
+namespace CosmosIdentityFunc.Functions
 {
+    
     public static class getUsers
     {
+
+        // private readonly IProductService _productService;
+        //
+        // public GetUsers(IProductService productService)
+        // {
+        //     _productService = productService;
+        // }
+        
+        
         [FunctionName("getUsers")]
         public static async Task<IActionResult> RunAsync(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req, ILogger log)
