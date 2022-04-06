@@ -1,1 +1,1 @@
-# Azure function with cosmos using identity
+# Azure function implementing identity using cosmos db
