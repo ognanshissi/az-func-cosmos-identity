@@ -1,3 +1,5 @@
+using System;
+
 namespace Core.Entities
 {
     public class Product: BaseEntity
@@ -9,7 +11,8 @@ namespace Core.Entities
 
         public Product(string name, string description, int rate)
         {
-            Id = new System.Guid();
+            Id = Guid.NewGuid();
+            PartitionKey = Guid.NewGuid().ToString();
             Name = name;
             Description = description;
             Rate = rate;
