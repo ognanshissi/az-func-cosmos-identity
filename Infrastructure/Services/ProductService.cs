@@ -20,6 +20,7 @@ namespace Infrastructure.Services
         public async Task<Product> CreateAsync(string name, string description, int rate)
         {
             var product = new Product(name, description, rate);
+            product.PartitionKey = new Guid().ToString();
             await  _context.Products.AddAsync(product);
             await _context.SaveChangesAsync();
             return product;

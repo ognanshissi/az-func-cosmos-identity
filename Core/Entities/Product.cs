@@ -9,6 +9,7 @@ namespace Core.Entities
 
         public Product(string name, string description, int rate)
         {
+            Id = new System.Guid();
             Name = name;
             Description = description;
             Rate = rate;
